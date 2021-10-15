@@ -261,7 +261,7 @@ class Phone {
   }
 }
 
-let phone = new Phone('Apple', "Iphone 12", '16GB', 'Gold', 200);
+let phone = new Phone('Apple', "Iphone 12", 16, 'Gold', 200);
 // phone.sell();
 // phone.changePrice(300);
   
@@ -275,7 +275,9 @@ let phone = new Phone('Apple', "Iphone 12", '16GB', 'Gold', 200);
     - price: number
 */
 
-//Code Here
+let phone1 = new Phone('Samsung', "Galaxy", 24, 'Silver', 250);
+let phone2 = new Phone('Blackberry', "Blackberry Classic", 14, 'Red', 150);
+let phone3 = new Phone('Nokia', "Brick 2000", 50, 'Black', 400);
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -284,7 +286,9 @@ let phone = new Phone('Apple', "Iphone 12", '16GB', 'Gold', 200);
   Then console.log that object to see the price change
 */ 
 
-//Code Here 
+// phone1.changePrice(600);
+// console.log(phone1)
+
 
 
 /*
@@ -293,7 +297,8 @@ let phone = new Phone('Apple', "Iphone 12", '16GB', 'Gold', 200);
   Print the value of that phone's sell property to make sure it's been changed to true
 */
 
-//Code Here 
+// phone3.sell();
+// console.log(phone3);
 
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
@@ -312,7 +317,10 @@ const colors = {
 }
 //do not edit this object
 
-//Code Here 
+// let colorsCopy = {...colors};
+// console.log(colorsCopy);
+
+
 
 
 
@@ -340,8 +348,8 @@ const shippingInfo = {
 }
 //do not edit the objects above
 
-//Code Here
-
+// let helensInfo = {...contactInfo, ...shippingInfo};
+// console.log(helensInfo);
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
@@ -358,14 +366,23 @@ const shippingInfo = {
   And finally, print the value of the mileage.
 */
 
-//Code Here 
-
+class Vehicle {
+  constructor (capacity, color, mileage) {
+    this.capacity = capacity;
+    this.color = color;
+    this.mileage = mileage;
+  }
+  move(miles) {
+    this.mileage += miles;
+    console.log(this.mileage);
+  }
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
-//Code Here
+let myFirstVehicle = new Vehicle (4, 'grey', 40000);
 
 
 /* 
