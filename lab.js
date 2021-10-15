@@ -394,7 +394,11 @@ let myFirstVehicle = new Vehicle (4, 'grey', 40000);
   Note: You might need to go research 'how to extend a class'. 
 */
 
-//Code Here
+class Motorcycle extends Vehicle {
+  constructor () {
+    super ()
+  }
+}
 
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
