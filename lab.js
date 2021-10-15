@@ -4,8 +4,7 @@
   Give it a key of name with the value being your name, and another key of age with the value being your age.
 */
 
-//Code here
-
+let me = {name: 'Chris', age: '28'}
 
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
@@ -15,22 +14,20 @@
 //name (a string), color (a string), age (a number),
 //and goodBoy/goodGirl (a boolean).
 
-//Code here
+let dog = {name: 'Randy', color: 'brown', age: '4', goodBoy: "true"}
 
 
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
-//Code here
-
+// console.log(dog.name)
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
-//Code here
-
+// console.log(dog['color'])
 
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
@@ -39,22 +36,26 @@
   Have the values to those keys be strings that are equal to your favorite thing in that category.
 */
 
-//Code here
+let favoriteThings = {band: 'Twice', food: 'pizza', person: 'Shannon Sharpe', book: 'Dune', movie: 'Shawshank Redemption', holiday: 'Christmas'}
 
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
-//Code here
 
+favoriteThings.car = 'Aventador';
+favoriteThings.show = 'Breaking Bad'
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
-//Code here
+favoriteThings.food = 'Chicken Nuggets';
+favoriteThings.book = 'Harry Potter';
+// console.log(favoriteThings)
+
 
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
@@ -72,8 +73,10 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
-
+var color = carDetails.color;
+var make = carDetails.make;
+var model = carDetails.model;
+var year = carDetails.year;
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
@@ -85,12 +88,15 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
-  
+  let firstName = obj.firstName;
+  let title = obj.title;
+  let lastName = obj.lastName;  
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
+
+// console.log(greeting({firstName: 'Chris', lastName: 'Kim', title: 'Mr.'}))
 
 
 
@@ -104,9 +110,15 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+function totalPopulation(obj) {
+  let utah = obj.utah;
+  let california = obj.california;
+  let texas = obj.texas;
+  let arizona = obj.arizona;
+  return utah + california + texas + arizona;
+}
 
-
+// console.log(totalPopulation({utah:3, california:3, texas: 4, arizona: 8}))
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -118,9 +130,17 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+let res = []
 
+function ingredients(obj) {
+  let carb = obj.carb;
+  let fat = obj.fat;
+  let protein = obj.protein;
+  return res.push(carb, fat, protein);
+}
 
+// ingredients({carb: 'bread', fat: 'avocado', protein: 'egg'})
+// console.log(res)
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
@@ -140,7 +160,14 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-//Code Here
+var user2 = {
+  name: 'Bryan G. Smith',
+  age: 24,
+  pwHash: 'U+Ldlngx2BYQk',
+  email: 'bryan.smith@devmounta.in@gmail.com',
+  birthday: '05/02/1990',
+  username: 'bryansmith33'
+}
 
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
@@ -148,8 +175,8 @@ var user = {
   Using the user object above, delete the users age off of the object.
 */
 
-//Code Here
-
+delete user.age;
+// console.log(user)
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -158,8 +185,16 @@ var user = {
   Print the name of your cat instance using dot notation.
 */
 
-//Code here
+class Cat {
+  constructor (name, age, color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
 
+let myCat = new Cat('Alfie', 12, 'white')
+// console.log(myCat.name)
 
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
@@ -170,7 +205,19 @@ var user = {
   Call the castSpell function on the instance of your wizard.
 */
 
-//Code here
+class Wizard {
+  constructor (name, age, favoriteSpell) {
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+    castSpell() {
+      console.log(`${this.name} has cast ${this.favoriteSpell}!`)
+    }
+}
+
+let wiz = new Wizard ('Harry', 20, 'expelliarmus');
+// wiz.castSpell();
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -195,8 +242,28 @@ var user = {
     to be newPrice.
 */
 
-//Code Here
+class Phone {
+  constructor (brand, model, storage, color, price, sold) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+  sell() {
+    this.sold = true;
+    console.log(`${this.brand} ${this.model} has been sold.`)
+  }
+  changePrice(newPrice) {
+    this.price = newPrice;
+    console.log('Price is changed')
+  }
+}
 
+let phone = new Phone('Apple', "Iphone 12", '16GB', 'Gold', 200);
+// phone.sell();
+// phone.changePrice(300);
   
 /*
     Next make three new phone instances using your class.
