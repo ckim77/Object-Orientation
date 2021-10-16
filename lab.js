@@ -395,8 +395,10 @@ let myFirstVehicle = new Vehicle (4, 'grey', 40000);
 */
 
 class Motorcycle extends Vehicle {
-  constructor () {
-    super ()
+  constructor (capacity, color, mileage, make, isCool) {
+    super (capacity, color, mileage);
+    this.make = make;
+    this.isCool = isCool;
   }
 }
 
@@ -404,11 +406,14 @@ class Motorcycle extends Vehicle {
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
-//Code Here 
+let myFirstMotorcycle = new Motorcycle (2, 'black', 20000, "Honda", true) 
 
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
+
+// myFirstMotorcycle.move(30000);
+
 
 /*
   Let's make another class based off of Vehicle. 
@@ -425,7 +430,26 @@ class Motorcycle extends Vehicle {
   This function should set isSeaworthy to be true
 */
 
-//Code Here
+class Boat extends Vehicle {
+  constructor (capacity, color, mileage, name, type, isSeaworthy) {
+    super (capacity, color, mileage);
+    this.name = name;
+    this.type = type;
+    this.isSeaworthy = isSeaworthy;
+  }
+  
+  checkSeaworthiness() {
+    if (this.isSeaworthy === true) {
+      console.log(`The ${this.color} ${this.type} ${this.name} is seaworthy.`)
+    } else {
+      console.log(`You need to get your ${this.type} in shape!`)
+    }
+  } 
+  
+  performMaintenance() {
+    this.isSeaworthy = true;
+  } 
+}
 
 
 /*
@@ -433,22 +457,23 @@ class Motorcycle extends Vehicle {
   properties except isSeaworthy -- make that one false. Call your variable myFirstBoat.
 */
 
-//Code Here
+
+let boat = new Boat (50, 'white', 40000, 'SS Laker', 'yacht', false)
+
 
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
-//Code Here
+// boat.checkSeaworthiness();
 
 /*
   Now run the performMaintenance method on your boat
 */
 
-//Code Here 
-
+boat.performMaintenance();
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
 
-//Code Here
+boat.checkSeaworthiness();
